@@ -1,25 +1,26 @@
 const express = require('express');
-const validator = require('validator');
 const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-const Employee = mongoose.model('Employee', {
+var UserSchema = new Schema({
     name:{
-        type:String,
-        require:true
-    },
-    email:{
+         type:String,
+         required:true
+        },
+        email:{
         type: String,
-        require: true,
-        validate: {
-            validator: validator.isEmail,
-            message:`{VALUE} is not valid email`
-        }
-    },
-    password: {
-        type:String,
-        require:true  
-    }
+        required: true
+         },
+         password: {
+         type:String,
+         required:true  
+         },
+         date: {
+         type: Date,
+         dafault:Date.now
+         }
+        });
 
-});
-
-module.exports = {Employee}
+module.exports = mongoose.model('User', UserSchema)
+//module.exports = {User};
+//module.exports = User;

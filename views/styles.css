@@ -5,3 +5,17 @@
 #pap{
    background:green; 
 }
+#navlink{
+    text-align: right;
+}
+#navhead{
+    font-size: 30px;
+    font-weight: 300;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.indtittle{
+   margin: 20px;
+}
+#logutbtn{
+    border: none;
+}
